@@ -1,6 +1,6 @@
 /*
 This file is part of the OdinMS Maple Story Server
-Copyright (C) 2008 ~ 2010 Patrick Huy <patrick.huy@frz.cc> 
+Copyright (C) 2008 ~ 2010 Patrick Huy <patrick.huy@frz.cc>
 Matthias Butz <matze@odinms.de>
 Jan Christian Meyer <vimes@odinms.de>
 
@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package constants;
 
 import server.ServerProperties;
+import static java.lang.System.getenv;
 
 public class ServerConstants {
     // 159.89.87.254
@@ -57,7 +58,7 @@ public class ServerConstants {
     public static final int MTS_BASE = 0; // +amount to everything, GMS = 500, MSEA = 1000
     public static final int MTS_TAX = 5; // +% to everything, GMS = 10
     public static final int MTS_MESO = 10000; // mesos needed, GMS = 5000
-    public static final String SQL_USER = "root", SQL_PASSWORD = "";
+    public static final String SQL_USER = getenv("DB_USER"), SQL_PASSWORD = getenv("DB_PASSWORD");
     // master login is only used in GMS: fake account for localhost only
     // master and master2 is to bypass all accounts passwords only if you are under
     // the IPs below
