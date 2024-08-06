@@ -3,10 +3,7 @@ package database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
 import server.ServerProperties;
-
-import static java.lang.System.getenv;
 
 /**
  * @author Manu -
@@ -27,9 +24,9 @@ public class DatabaseConnection {
 		int denies = 0;
 		while (true) { // There is no way it can pass with a null out of here?
 			try {
-				String url = ServerProperties.getProperty("database.url", "jdbc:mysql://" + getenv("DB_HOST") + ":" + getenv("DB_PORT") + "/" + getenv("DB_DATABASE") + "?autoReconnect=true");
-				String user = ServerProperties.getProperty("database.user", getenv("DB_USER"));
-				String password = ServerProperties.getProperty("database.password", getenv("DB_PASSWORD"));
+				String url = ServerProperties.getProperty("database.url", "jdbc:mysql://localhost:3306/v111?autoReconnect=true");
+				String user = ServerProperties.getProperty("database.user", "root");
+				String password = ServerProperties.getProperty("database.password", "root");
 
 				return DriverManager.getConnection(url, user, password);
 			} catch (SQLException sqle) {

@@ -21,15 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package constants;
 
 import server.ServerProperties;
-import static java.lang.System.getenv;
 
 public class ServerConstants {
     // 159.89.87.254
 
     public static boolean TESPIA = false; // true = uses GMS test server, for MSEA it does nothing though
-    public static final byte[] Gateway_IP = new byte[] { (byte) 127, (byte) 0, (byte) 0, (byte) 1 };
-    // public static final byte[] Gateway_IP = new byte[]{(byte) 5, (byte) 180,
-    // (byte) 9, (byte) 16};
     // Inject a DLL that hooks SetupDiGetClassDevsExA and returns 0.
 
     /*
@@ -58,7 +54,6 @@ public class ServerConstants {
     public static final int MTS_BASE = 0; // +amount to everything, GMS = 500, MSEA = 1000
     public static final int MTS_TAX = 5; // +% to everything, GMS = 10
     public static final int MTS_MESO = 10000; // mesos needed, GMS = 5000
-    public static final String SQL_USER = getenv("DB_USER"), SQL_PASSWORD = getenv("DB_PASSWORD");
     // master login is only used in GMS: fake account for localhost only
     // master and master2 is to bypass all accounts passwords only if you are under
     // the IPs below
