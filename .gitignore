@@ -15,3 +15,5 @@ Log_Script_Except.rtf
 *.rtf
 target/*
 .env
+*.properties
+!*.example.properties
